@@ -332,6 +332,9 @@ let container = document.querySelector('.container')
 for (i=1; i<=80; i++){
   let blocks = document.createElement('div')
   blocks.classList.add('block')
+  blocks.innerText = "😂"
+  blocks.style.fontSize = '30px'
+  blocks.style.background = 'none'
   container.appendChild(blocks)
 }
 
