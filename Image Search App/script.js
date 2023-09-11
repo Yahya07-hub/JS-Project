@@ -24,8 +24,11 @@ let defaultPage = 1;
 //     }
 // }
 
-searchImages = () => {
+async = searchImages = () => {
     inputData = input.value;
-    const url = ``
+    const url = `https://api.unsplash.com/search/photo?page=${defaultPage}&query${inputData}&client_id=${access_key}`
+
+     
+
 }
 

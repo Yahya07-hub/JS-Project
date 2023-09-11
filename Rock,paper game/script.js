@@ -64,6 +64,7 @@ function getWinner(playerChoice, computerChoice) {
         
     }
     if (userScore === 10 && computerScore < 10) {
+        startConfetti();
         resultText.textContent = `You win! Hahaha Sucker!`   
         resultText.style.color = 'green'
         rockBtn.disabled = true;
@@ -80,6 +81,8 @@ function getWinner(playerChoice, computerChoice) {
 }
 
 resetButton.addEventListener('click', () =>{
+    stopConfetti();
+    removeConfetti();
     userScore = 0
     computerScore = 0;
     userScore_Span.innerHTML = userScore
