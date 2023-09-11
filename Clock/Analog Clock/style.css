@@ -1,0 +1,98 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: radial-gradient(circle, #05263c, #000d1a);
+}
+
+.clock{
+    width: 500px;
+    height: 500px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    /* background-color: #c9d5e0; */
+    background-color: transparent;
+    background: radial-gradient(circle, #05263c, #000d1a);
+    /* box-shadow:
+    inset 12px 12px 13px rgb(255, 255, 255, 0.75),
+    -15px -15px 35px rgb(255, 255, 255, 0.75),
+    inset -7px -7px 15px rgb(255, 255, 255, 0.75); */
+}
+
+.clock::before{
+    content: "";
+    width: 525px;
+    height: 525px;
+    border-radius: 50%;
+    position: absolute;
+    background: linear-gradient(to right, #00d9ff, #ee00ff);
+    z-index: -1;
+    box-shadow:
+    
+    -2px -2px 15px #00d9ff,
+    
+    -2px -2px 15px #ee00ff;
+}
+
+.number{
+    position: absolute;
+    transform: rotate(calc(30deg * var(--n)));
+    text-align: center;
+    inset: 20px;
+    font-size: 40px;
+    color: #00d9ff;
+    /* box-shadow: inset 2px 2px 10px #ee00ff; */
+    /* z-index: -2; */
+}
+
+.number b{
+    transform: rotate(calc(-30deg * var(--n)));
+    display: inline-block;
+}
+
+.center-dot{
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    position: absolute;
+    background-color: #ee00ff;
+    border: 6px solid #00d9ff;
+}
+
+.hour-hand, .minute-hand, .second-hand{
+    --rotate: 0;
+    position: absolute;
+    bottom: 50%;
+    transform: rotate(calc(var(--rotate) * 1deg ));
+    transform-origin: bottom;
+
+    border-radius: 40px 40px 0 0;
+}
+
+.hour-hand{
+    width: 12px;
+    height: 130px;
+    background: linear-gradient(to top, #ee00ff, #00d9ff );
+}
+
+.minute-hand{
+    width: 12px;
+    height: 190px;
+    background: linear-gradient(to top, #ee00ff, #00d9ff);
+}
+
+.second-hand{
+    width: 6px;
+    height: 210px;
+    background: linear-gradient(to top, #ee00ff, #00d9ff);
+}

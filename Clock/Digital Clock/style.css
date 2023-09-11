@@ -1,0 +1,135 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+}
+
+/* body{
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+} */
+
+.container{
+    width: 100%;
+    height: 100vh;
+    background: radial-gradient(circle, #05263c, #000d1a);
+    color: #fff;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sub-container{
+    width: 800px;
+    height: 180px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    /* top: 50%;
+    left: 50%; */
+    /* transform: translate(-50%, -50%); */
+    
+}
+
+.clock{
+    width: 100%;
+    height: 100%;
+    /* background: rgba(235, 0, 255, .11); */
+    background: radial-gradient(circle, #05263c);
+    box-shadow:
+    inset 12px 12px 13px #000d1a,
+    -5px -5px 8px #000d1a,
+    inset -7px -7px 15px #05263c,
+    5px 5px 8px #000d1a;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 5px;
+    z-index: 2;
+    backdrop-filter: blur(40px);
+}
+
+.sub-container::before{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-color: #ee00ff;
+    position: absolute;
+    z-index: 1;
+    left: -5%;
+    top: -30%;
+    border-radius: 5px;
+}
+.sub-container::after{
+    content: '';
+    width: 180px;
+    height: 180px;
+    background-color: #00d9ff;
+    position: absolute;
+    z-index: 1;
+    right: -5%;
+    top: 30%;
+    border-radius: 50%;
+} 
+
+.clock span{
+    font-size: 80px;
+    width: 110px;
+    display: inline-block;
+    position: relative;
+    text-align: center;
+    text-shadow: 12px 12px 8px #00d9ff;
+}
+
+.clock span::after{
+    font-size: 16px;
+    /* font-weight: 600; */
+    position: absolute;
+    bottom: -5%;
+    left: 50%;
+    transform: translateX(-50%);
+}
+
+#hour::after{
+    content: 'HOURS';
+}
+#minute::after{
+    content: 'MINUTES';
+}
+#second::after{
+    content: 'SECONDS';
+}
+
+/* .container{
+    width: 800px;
+    height: 150px;
+    
+    display: flex;
+    align-items: center;
+    justify-content: center;
+} */
+
+/* .clock{
+    position: absolute;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 600px;
+    height: 180px;
+    background: rgba(235, 0, 255, .11);
+    border-radius: 5px;
+    text-align: center;
+    backdrop-filter: blur(40px);
+
+}
+
+
+
