@@ -151,8 +151,8 @@ body {
   color: #540d00;
   font-size: 5vw;
 }
-.main .panel .panel-bottom .resetbtn {
-  padding: 10px 12px;
+.main .panel .panel-bottom button {
+  padding: 10px;
 }
 .loader {
   height: 100vh;

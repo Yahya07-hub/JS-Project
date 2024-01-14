@@ -14,7 +14,7 @@ function addBubble() {
 }
 
 // Creating 60s Timer
-var timer = 3;
+var timer = 63;
 function timerCountdown() {
     var timerint = setInterval(() => {
         if (timer > 0) {
@@ -73,8 +73,10 @@ function loader() {
     })
 }
 
+// Adding Animations
 
-// loader()
-// addBubble()
-// timerCountdown()
+
+loader()
+addBubble()
+timerCountdown()
 getHitValue()
