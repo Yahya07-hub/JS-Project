@@ -68,7 +68,7 @@
 }
 @font-face {
   font-family: Rubik;
-  src: url('/Fonts/Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf');
+  src: url('Rubik_Doodle_Shadow/RubikDoodleShadow-Regular.ttf');
 }
 html,
 body {
@@ -128,7 +128,10 @@ body {
 }
 .main .panel .panel-bottom .bubble {
   font-family: 'Poppins', sans-serif;
-  background-color: tomato;
+  background-image: url(Bubble.png);
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
   width: 40px;
   height: 40px;
   border-radius: 50%;
@@ -147,4 +150,17 @@ body {
 .main .panel .panel-bottom .gameEnd {
   color: #540d00;
   font-size: 5vw;
+}
+.main .panel .panel-bottom .resetbtn {
+  padding: 10px 12px;
+}
+.loader {
+  height: 100vh;
+  width: 100vw;
+  background-color: red;
+  position: fixed;
+  z-index: 999;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

@@ -14,17 +14,18 @@ function addBubble() {
 }
 
 // Creating 60s Timer
-var timer = 60;
+var timer = 3;
 function timerCountdown() {
     var timerint = setInterval(() => {
         if (timer > 0) {
             timer--;
             timerDisplay.innerHTML = timer
         }
-        else{
+        else {
             clearInterval(timerint)
-            bubbleSpace.innerHTML = 
-                `<h1 class="gameEnd">Game Over! Your Score is ${score}</h1>`
+            bubbleSpace.innerHTML =
+                `<h1 class="gameEnd">Game Over! Your Score is ${score}</h1>
+                `
         }
     }, 1000);
 
@@ -36,12 +37,12 @@ var score = 0;
 function getScore() {
     score += 10
     scoreDisplay.textContent = score
-    
+
 }
 
 // Getting Different No In Hit Box
 let hitVal = 0;
-function getHitValue(){
+function getHitValue() {
     hitVal = Math.floor(Math.random() * 11)
     hitDisplay.textContent = hitVal
 }
@@ -49,14 +50,31 @@ function getHitValue(){
 // Click Event For The Bubbles
 bubbleSpace.addEventListener('click', (e) => {
     let clickedNo = Number(e.target.textContent)
-    if(clickedNo === hitVal){
+    if (clickedNo === hitVal) {
         getScore()
         addBubble()
         getHitValue()
     }
 })
 
+// Creating Loader
+let preLoader = document.querySelector('.loader')
+function loader() {
+    gsap.to(".loader img", {
+        duration: 3,
+        scale: 1.5,
+        rotate: '360deg',
+        ease: Power4.easeInOut,
+        onComplete: () => {
+            setTimeout(() => {
+                preLoader.remove()
+            }, 100);
+        }
+    })
+}
 
-addBubble()
-timerCountdown()
+
+// loader()
+// addBubble()
+// timerCountdown()
 getHitValue()
