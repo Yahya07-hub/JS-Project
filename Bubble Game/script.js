@@ -14,7 +14,7 @@ function addBubble() {
 }
 
 // Creating 60s Timer
-var timer = 63;
+var timer = 60;
 function timerCountdown() {
     var timerint = setInterval(() => {
         if (timer > 0) {
@@ -66,17 +66,35 @@ function loader() {
         rotate: '360deg',
         ease: Power4.easeInOut,
         onComplete: () => {
-            setTimeout(() => {
-                preLoader.remove()
-            }, 100);
+        //     setTimeout(() => {
+        //         preLoader.remove()
+        //     }, 100);
+        
+        preLoader.style.display = 'none'
         }
     })
 }
 
 // Adding Animations
-
+var tl = gsap.timeline()
+setTimeout(() => {
+    tl.to('.panel', {
+        y: 0.3,
+        duration: 1.2,
+        ease: "power4.inOut",
+        opacity: 1,
+        stagger: 0.2
+    
+    })
+    tl.from(".panel-top .elem", {
+        y: -70,
+        duration: 0.7,
+        opacity: 0,
+        stagger: 0.2
+    })
+    addBubble()
+    timerCountdown()
+    getHitValue()
+}, 3000);
 
 loader()
-addBubble()
-timerCountdown()
-getHitValue()

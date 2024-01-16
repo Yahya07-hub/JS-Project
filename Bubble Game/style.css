@@ -91,6 +91,7 @@ body {
   border-radius: 10px;
   overflow: hidden;
   box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+  opacity: 0;
 }
 .main .panel .panel-top {
   display: flex;
@@ -150,9 +151,6 @@ body {
 .main .panel .panel-bottom .gameEnd {
   color: #540d00;
   font-size: 5vw;
-}
-.main .panel .panel-bottom button {
-  padding: 10px;
 }
 .loader {
   height: 100vh;
