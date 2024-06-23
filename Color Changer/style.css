@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  width: 100%;
+  text-align: center;
+  margin: auto 0;
+}
+.container .box {
+  width: 200px;
+  height: 200px;
+  border: 2px solid black;
+  display: inline-block;
+}
+.container .red {
+  background-color: red;
+}
+.container .grey {
+  background-color: grey;
+}
+.container .blue {
+  background-color: blue;
+}
+.container .yellow {
+  background-color: yellow;
+}

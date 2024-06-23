@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>BMI Calculator</title>
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>BMI Calculator</h1>
+
+
+        Height in Cms: <input type="number" placeholder="Height in Cms" id="height"> <br>
+        Weight in Kgs: <input type="number" placeholder="Weight in Kgs" id="weight"> <br>
+        <button class="calculate"> Calculate </button>
+
+        <div class="result"></div> <br>
+
+
+
+        <div class="weight-guide">
+            <h3>BMI Weight Guide</h3>
+            <p>Under Weight = Less than 18.6</p>
+            <p>Normal Range = 18.6 and 24.9</p>
+            <p>Overweight = Greater than 24.9</p>
+            <p>Obesity = BMI of 30 or greater</p>
+        </div>
+
+    </div>
+
+
+    <script>
+        // let form = document.querySelector('form');
+        let calcBtn = document.querySelector('.calculate')
+
+        calcBtn.addEventListener('click', (e) => {
+            e.preventDefault();
+
+            let heightInput = document.querySelector('#height').value;
+            let weightInput = document.querySelector('#weight').value
+            let resultDiv = document.querySelector('.result');
+            resultDiv.classList.add('resultt')
+            
+            if (heightInput === '' || heightInput < 0 || isNaN(heightInput)) {
+                resultDiv.innerHTML = `Please give a valid height ${heightInput}`
+            }
+            else if (weightInput === '' || weightInput < 0 || isNaN(weightInput)) {
+                resultDiv.innerHTML = `Please give a valid weight ${weightInput}`
+            }
+            else {
+
+                const bmi = (weightInput / ((heightInput * heightInput) / 10000)).toFixed(2);
+                if (bmi < 18.6) {
+                    resultDiv.innerHTML = `Your BMI is ${bmi} and you are Underweight`
+                }
+                else if (bmi >= 18.6 && bmi <= 24.9) {
+                    resultDiv.innerHTML = `Your BMI is ${bmi} and you are in Normal Range`
+                }
+                else if (bmi > 24.9 && bmi < 30) {
+                    resultDiv.innerHTML = `Your BMI is ${bmi} and you are Overweight`
+                }
+                else {
+                    resultDiv.innerHTML = `Your BMI is ${bmi} and you are Obese`
+                }
+
+            }
+            console.log(`height is ${heightInput} and Weight is ${weightInput}`)
+        })
+
+
+    </script>
+</body>
+
+</html>

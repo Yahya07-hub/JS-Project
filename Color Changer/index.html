@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Color Changer</title>
+
+    <!-- StyleSheet -->
+    <link rel="stylesheet" href="style.css">
+
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>Color Scheme Switcher</h1>
+
+        <div class="box red" id="red"></div>
+        <div class="box grey" id="grey"></div>
+        <div class="box blue" id="blue"></div>
+        <div class="box yellow" id="yellow"></div>
+
+        <h2>
+            Try clicking on one of the colors above
+            <span>to change the background color of this page!</span>
+        </h2>
+
+    </div>
+
+    <script>
+        let boxes = document.querySelectorAll('.box');
+        let body = document.querySelector('body')
+        // let red = document.querySelector('.red')
+        // let grey = document.querySelector('.grey')
+        // let blue = document.querySelector('.blue')
+        // let yellow = document.querySelector('.yellow')
+
+        // red.addEventListener('click', () => {
+        //     body.style.background = 'red';
+        // })
+        // grey.addEventListener('click', () => {
+        //     body.style.background = 'grey';
+        // })
+        // blue.addEventListener('click', () => {
+        //     body.style.background = 'blue';
+        // })
+        // yellow.addEventListener('click', () => {
+        //     body.style.background = 'yellow';
+        // })
+        boxes.forEach(box => {
+            box.addEventListener('click', (e) => {
+                let color = e.target.classList[1];
+                console.log(color)
+                body.style.background = color;
+
+                // if(e.target.classList == 'red'){
+                //     body.style.backgroundColor = e.target.classList;
+                // }
+                // if(e.target.classList == 'grey'){
+                //     body.style.backgroundColor = e.target.classList;
+                // }
+                // if(e.target.classList == 'blue'){
+                //     body.style.backgroundColor = e.target.classList;
+                // }
+                // if(e.target.classList == 'yellow'){
+                //     body.style.backgroundColor = e.target.classList;
+                // }
+
+
+            })
+        })
+    </script>
+</body>
+
+</html>
