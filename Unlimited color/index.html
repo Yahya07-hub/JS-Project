@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Unlimited Colors</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <h1>Click Start For Led Effect</h1>
+    <button id="start">Start</button>
+    <button id="stop">Stop</button>
+
+
+    <script>
+        let led = document.querySelector('body');
+        let start = document.querySelector('#start');
+        let stop = document.querySelector('#stop');
+        let intervalId
+
+        randomColors = () => {
+            const hex = '123456789ABCDEF'
+            let colors = `#${Array(6).fill(0).map( () => hex[Math.floor(Math.random() * 16)]).join('')}`
+            return colors
+        }
+        
+       start.addEventListener('click', () => {
+            if (intervalId === null) {
+                intervalId = setInterval(() => {
+                    led.style.background = randomColors()
+                    console.log(randomColors())
+                }, 1000);
+            }       
+        })
+      
+        stop.addEventListener('click', () => {
+            clearInterval(intervalId)
+            intervalId = null
+        })
+
+        // Soln 1
+        // let colors = ['red', 'orange', 'yellow', 'green', 'blue', 'purple']; Limited Colors
+        
+        // start.addEventListener('click', () => {
+
+        //     intervalId = setInterval(() => {
+        //         let randomColors = colors[Math.floor(Math.random() * colors.length)]
+        //         led.style.background = randomColors;
+        //         console.log(randomColors)
+                
+        //         }, 1000)
+        // })
+
+        // Soln 2
+        // Using For Loop
+        // const randomColors = () => {
+        //     const hex = '0123456789ABCDEF'
+        //     let color = '#'
+        //     for (let i = 0; i < 6; i++) {
+        //         color += hex[Math.floor(Math.random() * 16)]
+        //     }
+            
+        //     return color
+
+        // }
+
+    </script>
+</body>
+
+</html>
