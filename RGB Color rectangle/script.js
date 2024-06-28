@@ -13,7 +13,7 @@ colorPickers.forEach((picker, index) => {
     });
 });
 
-function getRgbString(index, value) {
+getRgbString = (index, value) => {
     const rgbComponents = [[value, 0, 0], [0, value, 0], [0, 0, value]];
     return `rgb(${rgbComponents[index].join(', ')})`;
 }
