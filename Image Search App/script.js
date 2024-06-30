@@ -1,64 +1,64 @@
-let access_key = 'II1iO_XgTriY1Abush_pW9N8LjQS3rFyCWSM6EcZ24w'
+// let access_key = 'II1iO_XgTriY1Abush_pW9N8LjQS3rFyCWSM6EcZ24w'
 
-getData = async () => {
-    const url = await fetch(`https://api.unsplash.com/search/photos?query=dog &per_page=28&P=1 age&client_id=${access_key}`)
-    const data = await url.json()
-    console.log(data)
-}
-getData()
-
-// const formEl = document.frm;
-// const input = document.getElementById('search-input');
-
-// const searchResults = document.querySelector('.search-results')
-// const showMore = document.get('show-more-btn')
-
-// let inputData = ''
-// let defaultPage = 1;
-
-// searchImages = async () => {
-//     inputData = input.value;
-//     const response = await fetch(`https://api.unsplash.com/search/photos?query=${inputData} &page=${defaultPage}&per_page=12&client_id=${access_key}`)
-//     const data = await response.json();
-//     console.log(data);
-
-//     let results = data.results
-
-//     if (defaultPage === 1) {
-//         searchResults.innerHTML = ''
-
-//     }
-
-//     results.map((result) => {
-//         const imageWrapper = document.createElement("div");
-//         imageWrapper.classlist.add("search-result");
-//         const image = document.createElement("img");
-//         image.src = result.urls.small;
-//         image.alt = result.alt_description;
-//         const imagelink = document.createElement("a");
-//         imagelink.href = result.links.html;
-//         imagelink.target = "blank";
-//         imagelink.textContent = result.alt_description;
-
-//         imageWrapper.appendChild(image);
-//         imageWrapper.appendChild(imageLink);
-//         imageWrapper.appendChild(imageWrapper);
-//     });
-//     page++;
-//     if (page > 1) {
-//         showMore.style.display = "block";
-//     }
+// getData = async () => {
+//     const url = await fetch(`https://api.unsplash.com/search/photos?query=dog &per_page=28&P=1 age&client_id=${access_key}`)
+//     const data = await url.json()
+//     console.log(data)
 // }
+// getData()
 
-// formEl.addEventListener("submit", (event) => {
-//     event.preventDefault();
-//     page = 1;
-//     searchImages();
-// });
+const formEl = document.frm;
+const input = document.getElementById('search-input');
 
-// showMore.addEventListener("click", () => {
-//     searchImages();
-// });
+const searchResults = document.querySelector('.search-results')
+const showMore = document.get('show-more-btn')
+
+let inputData = ''
+let defaultPage = 1;
+
+searchImages = async () => {
+    inputData = input.value;
+    const response = await fetch(`https://api.unsplash.com/search/photos?query=${inputData} &page=${defaultPage}&per_page=12&client_id=${access_key}`)
+    const data = await response.json();
+    console.log(data);
+
+    let results = data.results
+
+    if (defaultPage === 1) {
+        searchResults.innerHTML = ''
+
+    }
+
+    results.map((result) => {
+        const imageWrapper = document.createElement("div");
+        imageWrapper.classlist.add("search-result");
+        const image = document.createElement("img");
+        image.src = result.urls.small;
+        image.alt = result.alt_description;
+        const imagelink = document.createElement("a");
+        imagelink.href = result.links.html;
+        imagelink.target = "blank";
+        imagelink.textContent = result.alt_description;
+
+        imageWrapper.appendChild(image);
+        imageWrapper.appendChild(imagelink);
+        imageWrapper.appendChild(imageWrapper);
+    });
+    page++;
+    if (page > 1) {
+        showMore.style.display = "block";
+    }
+}
+
+formEl.addEventListener("submit", (event) => {
+    event.preventDefault();
+    page = 1;
+    searchImages();
+});
+
+showMore.addEventListener("click", () => {
+    searchImages();
+});
 
 
 
