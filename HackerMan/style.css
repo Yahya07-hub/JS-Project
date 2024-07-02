@@ -1,0 +1,50 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: url(https://wallpapercave.com/wp/wp2592470.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    height: 100vh;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+
+
+}
+
+.sideBox {
+    width: 25%;
+    height: 100vh;
+    padding: 20px 20px;
+}
+
+.sideBox-content {
+    background-image: url("https://i.giphy.com/media/V4NSR1NG2p0KeJJyr5/giphy.webp");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-origin: content-box;
+    background-clip: content-box;
+    border: 1px solid white;
+    border-radius: 10px;
+    padding: 30px 20px;
+    height: 100%;
+}
+
+.container {
+    width: 50%;
+    text-align: center;
+    background: black;
+    border-radius: 5px;
+    padding: 50px 10px;
+    font-size: 20px;
+    color: green;
+    margin: 10px 20px;
+    line-height: 30px;
+    opacity: .8;
+
+
+}
