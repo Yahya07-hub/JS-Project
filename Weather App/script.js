@@ -48,7 +48,6 @@ submitBtn.addEventListener('click', function (e) {
 //     }
 // })
 
-// getWeather(userInput.value)
 
 
 
