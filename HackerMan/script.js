@@ -8,8 +8,8 @@ if (!username || username === null) {
 const hackingSteps = [
   "Initializing Hacking...",
   "Loaded all Hacking Tools",
-  "Connecting to Instagram...",
-  "Connecting to server 1...",
+  "Connecting to Instagram",
+  "Connecting to server 1",
   "Connection failed. Retrying...",
   "Connecting to server 2...",
   "Connected Successfully",
@@ -34,10 +34,28 @@ const delay = async (ms) => {
 };
 
 const simulateHackingProcess = async () => {
+  
   for (let i = 0; i < hackingSteps.length; i++) {
     messages.innerHTML += hackingSteps[i] + "<br>";
     await delay(Math.random() * 3000 + 2000); // random delay between 2-5 seconds
   }
+
+  let dotIndex = 0;
+  // let dotInterval;
+
+  // for (let i = 0; i < hackingSteps.length; i++) {
+  //   messages.innerHTML += hackingSteps[i] + '<br>';
+  //   await delay(Math.random() * 3000 + 2000); // random delay between 2-5 seconds
+  //   setInterval(() => {
+  //     messages.innerHTML = messages.innerHTML + "." 
+  //   }, 500);
+
+  // }
+
+ 
+
+  
 };
+
 
 simulateHackingProcess();

@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./style.css">
+</head>
+<body>
+    <section class="container">
+
+        
+        <h2 class="heading">
+            What's Up? <input type="text" id="name" placeholder="Enter your Name Here..">
+        </h2>
+
+        <div class="create-todo">
+            <h4>CREATE A TODO</h4>
+            <form action="" id="new-todo-form">
+                <h3>What's on your todo?</h3>
+                <input type="text" id="content" name="content" placeholder="Enter Here">
+
+                <h3>Pick a category</h3>
+                <div class="category">
+                    <label>
+                        <input type="radio" name="option" id="label1" value="business">
+                        <span class="bubble business"></span>
+                        <p>Business</p>
+                    </label>
+                    
+                    <label>
+                        <input type="radio" name="option" id="label2" value="personal">
+                        <span class="bubble personal"></span>
+                        <p>Personal</p>
+                    </label>
+                    
+                    
+                </div>
+                <button id="addTodo">Add Todo</button>
+            </form>
+        </div>
+
+        <div class="todo-list">
+            <h3>Todo List</h3>
+            <div class="list" id="todoList">
+                <!-- <div class="todo-item done">
+                    
+                    <label>
+                        <input type="checkbox" name="" id="">
+                        <span class="bubble business" id=""></span>
+                    </label>
+
+                    <div class="todo-content">
+                        <input type="text" value="Make a video" readonly>
+                    </div>
+
+                    <div class="action">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div>
+
+                <div class="todo-item">
+                    <label>
+                        <input type="checkbox" >
+                        <span class="bubble personal"></span>
+                    </label>
+
+                    <div class="todo-content">
+                        <input type="text" value="Ande Lete Aana" readonly>
+                    </div>
+
+                    <div class="action">
+                        <button class="edit">Edit</button>
+                        <button class="delete">Delete</button>
+                    </div>
+                </div> -->
+            </div>
+        </div>
+        
+        
+    </section>
+
+    <script src="./script.js"></script>
+</body>
+</html>
