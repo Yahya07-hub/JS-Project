@@ -1,0 +1,290 @@
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOiCnqEu92Fr1Mu51QrIzc.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TjARc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1Mu52xP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51S7ABc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TzBhc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: italic;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOjCnqEu92Fr1Mu51TLBBc9.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 100;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOkCnqEu92Fr1MmgWxP.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 300;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmSU5vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOmCnqEu92Fr1Me5Q.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 500;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmEU9vAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmWUlvAw.ttf) format('truetype');
+}
+@font-face {
+  font-family: 'Roboto';
+  font-style: normal;
+  font-weight: 900;
+  font-display: swap;
+  src: url(https://fonts.gstatic.com/s/roboto/v30/KFOlCnqEu92Fr1MmYUtvAw.ttf) format('truetype');
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+h1 {
+  font-size: 30px;
+  text-align: center;
+  padding: 20px;
+}
+.container {
+  width: 100%;
+  height: 100%;
+  padding: 30px 40px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: flex-start;
+  flex-direction: column;
+  gap: 30px;
+  /* Animations */
+}
+.container .card {
+  width: 100%;
+  background-color: #171717;
+  border-radius: 10px;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 20px;
+  padding: 15px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+.container .card .cardImg {
+  width: 200px;
+  height: 100px;
+  position: relative;
+}
+.container .card .cardImg img {
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  object-fit: cover;
+}
+.container .card .cardImg .duration {
+  position: absolute;
+  bottom: 4px;
+  right: 10px;
+  background-color: #00000094;
+  color: #fff;
+  padding: 2px 5px;
+  border-radius: 5px;
+  font-weight: bold;
+}
+.container .card .cardInfo {
+  display: block;
+  margin-bottom: auto;
+  color: #fff;
+}
+.container .card .cardInfo .title {
+  flex-wrap: wrap;
+  font-size: 14px;
+}
+.container .card .cardInfo .description {
+  display: flex;
+  align-items: center;
+  margin-top: 10px;
+  gap: 10px;
+  font-size: 15px;
+  color: #999999;
+}
+.container .loading {
+  /* Add a subtle animation to indicate loading */
+  animation: pulse 1s infinite;
+  background-color: #ffffff;
+  /* Card image */
+  /* Card info */
+}
+.container .loading .cardImg {
+  background-color: #d1d1d194;
+  background-image: linear-gradient(to right, #6a6a6a94, #a0a0a0);
+  background-size: 100% 3px;
+  background-position: 0% 100%;
+  animation: loading-bg 1s infinite;
+}
+.container .loading .cardImg img {
+  opacity: 0;
+  /* Hide the image while loading */
+}
+.container .loading .cardInfo .title {
+  background-image: linear-gradient(to right, #6a6a6a94, #a0a0a0);
+  width: 100vh;
+  padding: 8px;
+}
+.container .loading .cardInfo .description .cName,
+.container .loading .cardInfo .description .views,
+.container .loading .cardInfo .description .monthsOld {
+  background-image: linear-gradient(to right, #6a6a6a94, #a0a0a0);
+  padding: 8px;
+  color: #fff;
+  width: 30vh;
+}
+@keyframes loading-bg {
+  0% {
+    background-position: 0% 100%;
+  }
+  100% {
+    background-position: 100% 100%;
+  }
+}
+.buttons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-top: 20px;
+  gap: 10px;
+}
+.buttons button {
+  display: flex;
+  align-items: center;
+  font-family: inherit;
+  font-weight: 500;
+  font-size: 16px;
+  padding: 0.7em 1.4em 0.7em 1.1em;
+  color: white;
+  background: #ad5389;
+  background: linear-gradient(0deg, #14a73e 0%, #66f771 100%);
+  border: none;
+  box-shadow: 0 0.7em 1.5em -0.5em #14a73e98;
+  letter-spacing: 0.05em;
+  border-radius: 20em;
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  transition: 0.5s ease-in;
+}
+.buttons button:hover {
+  box-shadow: 0 0.5em 1.5em -0.5em #14a73e98;
+  transform: scale(100px);
+}
+.buttons button:active {
+  box-shadow: 0 0.3em 1em -0.5em #14a73e98;
+}
+.container {
+  /* Add a max-width for larger screens */
+  /* Adjust padding for smaller screens */
+}
+@media (min-width: 1200px) {
+  .container {
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+}
+@media (max-width: 768px) {
+  .container {
+    padding: 20px;
+  }
+}
+@media (max-width: 480px) {
+  .container {
+    padding: 15px;
+  }
+}
+.container .card {
+  /* Make the card full-width on smaller screens */
+}
+@media (max-width: 768px) {
+  .container .card {
+    flex-direction: column;
+  }
+}
+@media (max-width: 480px) {
+  .container .card {
+    gap: 10px;
+    padding: 10px;
+  }
+}
+.container .card .cardImg {
+  /* Make the image smaller on smaller screens */
+}
+@media (max-width: 768px) {
+  .container .card .cardImg {
+    width: 150px;
+    height: 75px;
+  }
+}
+@media (max-width: 480px) {
+  .container .card .cardImg {
+    width: 100px;
+    height: 50px;
+  }
+}
+.container .card .cardInfo {
+  /* Make the text smaller on smaller screens */
+}
+@media (max-width: 768px) {
+  .container .card .cardInfo {
+    font-size: 13px;
+  }
+}
+@media (max-width: 480px) {
+  .container .card .cardInfo {
+    font-size: 12px;
+  }
+}
