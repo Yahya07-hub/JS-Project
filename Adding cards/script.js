@@ -28,9 +28,6 @@
 
 // })
 
-
-console.log("script Loading");
-
 const addBtn = document.querySelector('.addCard');
 const removeBtn = document.querySelector('.removeCard');
 const container = document.querySelector('.container');
