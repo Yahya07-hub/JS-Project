@@ -139,6 +139,7 @@ const addTodoForm = document.getElementById('new-todo-form');
 const addTodoButton = document.getElementById('addTodo');
 const nameInput = document.getElementById('name');
 
+
 // Initialize an empty array to store the todos
 let todos = [];
 
@@ -171,14 +172,19 @@ function addTodo(event) {
   event.preventDefault();
   const contentInput = document.getElementById('content');
   const category = document.querySelector('input[name="option"]:checked').value;
-  const newTodo = {
-    content: contentInput.value,
-    category,
-    done: false,
-  };
-  todos.push(newTodo);
-  contentInput.value = '';
-  renderTodoList();
+  if (contentInput.value === "") {
+    alert("Write somthing to create a todo")
+  } else {
+    const newTodo = {
+      content: contentInput.value,
+      category,
+      done: false,
+    };
+    todos.push(newTodo);
+    contentInput.value = '';
+    renderTodoList();
+  }
+ 
 }
 
 // Function to toggle the done status of a todo
@@ -219,3 +225,26 @@ todoList.addEventListener('click', (event) => {
 
 // Render the initial todo list
 renderTodoList();
+
+window.addEventListener('load', () => {
+
+  // todos = JSON.parse(localStorage.getItem('todos')) || [];
+renderTodoList();
+
+  nameInput.addEventListener('input', (e) => {
+    localStorage.setItem('Username', e.target.value)
+    
+  })
+  nameInput.value = localStorage.getItem('Username')
+
+})
+
+
+// Retrieve the value from local storage and populate the input element
+// document.addEventListener('DOMContentLoaded', () => {
+//   const storedName = localStorage.getItem('name');
+//   if (storedName) {
+//     nameInput.value = storedName;
+//   }
+// });
+

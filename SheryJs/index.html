@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://unpkg.com/sheryjs/dist/Shery.css" /> <!-- Recommended -->
+</head>
+
+<body>
+
+    <!-- Ambulance Section -->
+    <section class="ambulances">
+        <div class="section-header">
+            <h5>Ambulance</h5>
+            <h1>India's One Of The Largest Emergency Response Company</h1>
+            <p>At Ambulanz, we prioritize swiftness and scale, ensuring critical medical care is just moments away.
+                With our advanced fleet and nationwide presence, we redefine emergency medical services, making a
+                difference where it matters most.</p>
+            <button class="primaryBtn">KNOW MORE</button>
+        </div>
+        <div class="inner-container">
+            <div class="left-container">
+                <div class="left-inner">
+                    <img src="" alt="">
+                    <h5>ROAD <span><i>AMBULANCE</i></span></h5>
+                    <p>Experience unparalleled emergency medical response with our road ambulance services. Our
+                        fleet, equipped with cutting-edge technology and staffed by skilled professionals, ensures
+                        swift and secure transportation to medical facilities. Committed to excellence, we
+                        prioritize the well-being and safety of individuals in critical situations</p>
+                    <button class="button secondaryBtn magnet"><span><span>Know More >></span></span></button>
+                </div>
+                <div class="left-inner">
+                    <img src="" alt="">
+                    <h5>AIR <span><i>AMBULANCE</i></span></h5>
+                    <p>Discover rapid and comprehensive medical transport with our air ambulance services. Equipped
+                        with advanced life support systems and operated by experienced medical professionals, we
+                        ensure swift and secure air transportation for critical cases. </p>
+                    <button class="button secondaryBtn magnet"><span><span>Know More >></span></span></button>
+                </div>
+                <div class="left-inner last">
+                    <img src="" alt="">
+                    <h5>RAIL <span><i>AMBULANCE</i></span></h5>
+                    <p>Introducing our rail ambulance services, a reliable and efficient mode of medical transport.
+                        With specially equipped rail cars and a dedicated medical team, we ensure safe and
+                        comfortable journeys for patients requiring long-distance transportation. Combining the
+                        speed of rail travel with advanced medical care, we are committed to providing seamless and
+                        compassionate services for individuals in need of critical care during transit.</p>
+                    <button class="button secondaryBtn magnet"><span><span>Know More >></span></span></button>
+                </div>
+            </div>
+            <div class="right-container">
+                <div class="images">
+                    <img src="https://images.unsplash.com/photo-1579037005241-a79202c7e9fd?q=80&w=2940&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img src="https://images.unsplash.com/photo-1529305068150-201f3ded72c5?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                    <img src="https://images.unsplash.com/photo-1524747189276-85697ad1d098?q=80&w=2787&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="">
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Swiper -->
+  <div class="swiper mySwiper">
+    <div class="swiper-wrapper">
+      <div class="swiper-slide">Slide 1</div>
+      <div class="swiper-slide">Slide 2</div>
+      <div class="swiper-slide">Slide 3</div>
+      <div class="swiper-slide">Slide 4</div>
+      <div class="swiper-slide">Slide 5</div>
+      <div class="swiper-slide">Slide 6</div>
+      <div class="swiper-slide">Slide 7</div>
+      <div class="swiper-slide">Slide 8</div>
+      <div class="swiper-slide">Slide 9</div>
+    </div>
+    <div class="swiper-button-next"></div>
+    <div class="swiper-button-prev"></div>
+  </div>
+
+  
+    <!--  Gsap is needed for Basic Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+
+    <!-- Scroll Trigger is needed for Scroll Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+
+    <!-- Three.js is needed for 3d Effects -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/0.155.0/three.min.js"></script>
+
+    <!-- ControlKit is needed for Debug Panel -->
+    <script src="https://cdn.jsdelivr.net/gh/automat/controlkit.js@master/bin/controlKit.min.js"></script>
+
+    <script  type="text/javascript"  src="https://unpkg.com/sheryjs/dist/Shery.js"></script> <!-- Recommended -->
+    
+    
+
+    <script src="script.js"></script>
+
+    <!-- Swiper JS -->
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <!-- Initialize Swiper -->
+  <script>
+    var swiper = new Swiper(".mySwiper", {
+      navigation: {
+        nextEl: ".swiper-button-next",
+        prevEl: ".swiper-button-prev",
+      },
+    });
+  </script>
+</body>
+
+</html>
