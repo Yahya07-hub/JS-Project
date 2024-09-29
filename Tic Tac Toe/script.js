@@ -106,33 +106,46 @@ let drawAudio = new Audio("game-over.mp3")
 const currentPlayerTurn = () => `It's ${currentPlayer}'s turn`;
 
 // Add event listeners to the cells
+// cells.forEach((cell, index) => {
+//     cell.addEventListener('click', () => {
+//         if (gameOver) return;
+//         if (gameState[index] !== null) return;
+//         gameState[index] = currentPlayer;
+//         cell.textContent = currentPlayer;
+//         if (cell.textContent === 'X') {
+//             currentPlayer = 'O'
+//         } else {
+//             currentPlayer = 'X'
+//         }
+//         gameStatus.innerHTML = currentPlayerTurn();
+//         audioTurn.play();
+//         checkWin();
+//     });
+// });
+
+// Add event listeners to the cells
 cells.forEach((cell, index) => {
     cell.addEventListener('click', () => {
         if (gameOver) return;
-        if (gameState[index] !== null) return;
-        gameState[index] = currentPlayer;
-        cell.textContent = currentPlayer;
-        currentPlayer = currentPlayer === 'X' ? 'O' : 'X';
-        gameStatus.innerHTML = currentPlayerTurn();
-        audioTurn.play();
-        checkWin();
-    });
-});
+        if (gameState[index] !== null) return
+        gameState[index] = currentPlayer
+        cell.textContent = currentPlayer
+        if (cell.textContent === 'X') {
+            currentPlayer = 'O'
+        }
+        else{
+            currentPlayer = 'X'
+        }
+        // audioTurn.play()
+        gameStatus.innerHTML = currentPlayerTurn()
+        checkWin()
 
-// Add event listener to the reset button
-resetButton.addEventListener('click', () => {
-    gameState = Array(9).fill(null);
-    cells.forEach((cell) => {
-        cell.textContent = '';
-    });
-    gameOver = false;
-    currentPlayer = 'X';
-    gameStatus.textContent = '';
-});
+    })
+})
 
-// Check for a win
-function checkWin() {
-    const winConditions = [
+// check for a win
+checkWin = () => {
+    const winCondition = [
         [0, 1, 2],
         [3, 4, 5],
         [6, 7, 8],
@@ -140,23 +153,74 @@ function checkWin() {
         [1, 4, 7],
         [2, 5, 8],
         [0, 4, 8],
-        [2, 4, 6],
-    ];
+        [2, 4, 6]   
+    ]
 
-    for (let i = 0; i < winConditions.length; i++) {
-        const [a, b, c] = winConditions[i];
-        if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
-            gameStatus.textContent = `Player ${gameState[a]} wins!`;
+    for(let condition of winCondition){
+
+        let pos1 = cells[condition[0]].innerHTML
+        let pos2 = cells[condition[1]].innerHTML
+        let pos3 = cells[condition[2]].innerHTML
+        if ([pos1, pos2, pos3].every(pos => pos != "")) {
+            if(pos1 === pos2 && pos2 === pos3 ) {
+                gameStatus.textContent = `Player ${pos1} wins!`;
+                gameOver= true
+                winAudio.play();
+                return
+                
+            }
+        }
+        
+        if (!gameState.includes(null)) {
+            gameStatus.textContent = 'It\'s a draw!';
             gameOver = true;
-            winAudio.play();
-            return;
+            setTimeout(() => drawAudio.play() , 800);
         }
     }
-
-    if (!gameState.includes(null)) {
-        gameStatus.textContent = 'It\'s a draw!';
-        gameOver = true;
-        setTimeout(() => drawAudio.play() , 800);
-        
-    }
 }
+
+// Add event listener to the reset button
+resetGame = () => {
+    gameState = Array(9).fill(null)
+    cells.forEach((cell) => {
+        cell.textContent =""
+    })
+    gameOver = false
+    currentPlayer = 'X'
+    gameStatus.textContent = ""
+}
+resetButton.addEventListener('click', ()=> {
+    resetGame()
+})
+
+// Check for a win
+// function checkWin() {
+//     const winConditions = [
+//         [0, 1, 2],
+//         [3, 4, 5],
+//         [6, 7, 8],
+//         [0, 3, 6],
+//         [1, 4, 7],
+//         [2, 5, 8],
+//         [0, 4, 8],
+//         [2, 4, 6],
+//     ];
+
+//     for (let i = 0; i < winConditions.length; i++) {
+//         const [a, b, c] = winConditions[i];
+//         if (gameState[a] && gameState[a] === gameState[b] && gameState[a] === gameState[c]) {
+//             gameStatus.textContent = `Player ${gameState[a]} wins!`;
+//             gameOver = true;
+//             winAudio.play();
+//             return;
+//         }
+//     }
+
+//     if (!gameState.includes(null)) {
+//         gameStatus.textContent = 'It\'s a draw!';
+//         gameOver = true;
+//         setTimeout(() => drawAudio.play() , 800);
+        
+//     }
+//     console.log(gameState)
+// }
