@@ -18,20 +18,24 @@ body {
     background-repeat: no-repeat;
     background-position: center;
     background-attachment: fixed;
-
+	
 }
 
-.overlay{
+/* .overlay{
     position: absolute;
     top: 0;
     left: 0;
     width: 100vw;
     height: 100vh;
     background-color: rgba(0, 0, 0, 0.5);
-}
+} */
 
 section {
     text-align: center;
+	
+	/* padding: 20px;
+	margin: 20px; */
+
 }
 
 .cell {
