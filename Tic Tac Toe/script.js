@@ -136,7 +136,7 @@ cells.forEach((cell, index) => {
         else{
             currentPlayer = 'X'
         }
-        // audioTurn.play()
+        audioTurn.play()
         gameStatus.innerHTML = currentPlayerTurn()
         checkWin()
 
