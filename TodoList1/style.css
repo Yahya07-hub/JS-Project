@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
+/* @import url('https://fonts.googleapis.com/css2?family=Poppins:wght@200;300;400;500;600;700;800;900&display=swap');
 
 *{
     margin: 0;
@@ -137,7 +137,7 @@ input:checked ~ .bubble::after{
     
 }
 
-#todoList .todo-item{
+#todo-list .todo-item{
     display: flex;
     align-items: center;
     background-color: #fff;
@@ -219,10 +219,7 @@ input:checked ~ .bubble::after{
 }
 
 
-
-
-
-{
+.addBtn{
     width: 100%;
     background-color: rgb(255, 0, 0);
     border: none;
@@ -237,39 +234,34 @@ input:checked ~ .bubble::after{
     margin: 10px 0;
 }
 
-#addTodo:hover{
+.addBtn:hover{
 	opacity: 0.8;
 }
 
-/* .create-todo input[type="submit"] {
-	display: block;
-	width: 100%;
-	font-size: 1.125rem;
-	padding: 1rem 1.5rem;
-	color: #FFF;
-	font-weight: 700;
-	text-transform: uppercase;
-	background-color: var(--primary);
-	box-shadow: var(--personal-glow);
-	border-radius: 0.5rem;
-	cursor: pointer;
-	transition: 0.2s ease-out;
-} */
-
-/* .create-todo input[type="submit"]:hover {
-	opacity: 0.75;
-} */
-
-/* .todo-item.done .todo-content input {
+.todo-item.done .todo-content span {
 	text-decoration: line-through;
 	color: var(--grey);
-} */
+}
+
+.todo-item.done .actions button {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+.todo-item.done .actions .edit {
+    background-color: var(--primary);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+.todo-item.done .actions .delete {
+    background-color: var(--danger);
+    opacity: 0.5;
+    cursor: not-allowed;
+  } */
 
 
-/* Soln2 */
-
-/* Variables */
-/* :root {
+  :root {
 	--primary: #EA40A4;
 	--business: #3a82ee;
 	--personal: var(--primary);
@@ -282,11 +274,11 @@ input:checked ~ .bubble::after{
 
 	--business-glow: 0px 0px 4px rgba(58, 130, 238, 0.75);
 	--personal-glow: 0px 0px 4px rgba(234, 64, 164, 0.75);
-} */
+}
 /* End of Variables */
 
 /* Resets */
-/* * {
+* {
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
@@ -299,10 +291,10 @@ input:not([type="radio"]):not([type="checkbox"]), button {
 	outline: none;
 	background: none;
 	cursor: initial;
-} */
+}
 /* End of Resets */
 
-/* body {
+body {
 	background: var(--light);
 	color: var(--dark);
 }
@@ -504,4 +496,21 @@ input:checked ~ .bubble::after {
 .todo-item.done .todo-content input {
 	text-decoration: line-through;
 	color: var(--grey);
-} */
+}
+
+.todo-item.done .actions button {
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+.todo-item.done .actions .edit {
+    background-color: var(--primary);
+    opacity: 0.5;
+    cursor: not-allowed;
+  }
+  
+.todo-item.done .actions .delete {
+    background-color: var(--danger);
+    opacity: 0.5;
+    cursor: not-allowed;
+  } 

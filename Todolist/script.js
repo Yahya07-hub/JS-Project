@@ -413,8 +413,8 @@ window.addEventListener('load', () => {
 })
 
 function DisplayTodos () {
-	const todoList = document.querySelector('#todo-list');
-	todoList.innerHTML = "";
+	const todoList = document.querySelector('#todolist');
+	// todoList.innerHTML = "";
 
 	todos.forEach(todo => {
 		const todoItem = document.createElement('div');
